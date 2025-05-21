@@ -106,8 +106,8 @@ body {
 /* Icon Styles */
 .user,
 .cart {
-    width: 2rem;
-    height: 2rem;
+    width: 2.6rem;
+    height: 2.6rem;
     transition: transform 0.3s ease, filter 0.3s ease;
     cursor: pointer;
 }
