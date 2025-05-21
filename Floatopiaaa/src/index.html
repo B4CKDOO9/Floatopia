@@ -10,30 +10,32 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="d-flex align-items-center">
+    <nav class="navbar">
+        <div class="nav-logo">
             <img class="logo" src="../logo.png" alt="Logo">
         </div>
-        <div id="button_container">
-            <button class="text-nowrap btn-nav">Home</button>
-            <button class="text-nowrap btn-nav">Floaties</button>
-            <button class="text-nowrap btn-nav">Sale</button>
-            <button class="text-nowrap btn-nav">Contact us!</button>
-            <button class="text-nowrap btn-nav">About us</button>
+        <div class="nav-buttons">
+            <button class="btn-nav">Home</button>
+            <button class="btn-nav">Floaties</button>
+            <button class="btn-nav">Sale</button>
+            <button class="btn-nav">Contact us!</button>
+            <button class="btn-nav">About us</button>
         </div>
-        <div id="search_container">
-            <input type="text" class="search-bar" placeholder="Search...">
-        </div>
-        <div class="d-flex align-items-center">
-            <a href="balala"><img class="cart" src="../user-login.png" alt="User Login"></a>
+        <div class="nav-icons">
+            <a href="balala"><img class="user" src="../user.png" alt="User Login"></a>
             <a href="balala"><img class="cart" src="../cart.png" alt="Cart"></a>
         </div>
+        <div class="nav-search">
+            <input type="text" class="search-bar" placeholder="Search...">
+        </div>
     </nav>
-    <section class="container mt-5">
-        <h2>Section Title</h2>
-        <p>This is a section of the Bootstrap project.</p>
-    </section>
-    <footer class="text-white text-center py-4">
+    <main class="main-content">
+        <section class="container mt-5">
+            <h2>Section Title</h2>
+            <p>This is a section of the Bootstrap project.</p>
+        </section>
+    </main>
+    <footer>
         <p>&copy; 2023 Floatopia</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

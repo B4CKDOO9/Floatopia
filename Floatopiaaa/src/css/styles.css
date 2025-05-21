@@ -1,97 +1,97 @@
+/* Global resets and base styles */
 html,
 body {
-    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
     display: flex;
     flex-direction: column;
-    margin: 0;
-    overflow-x: hidden;
-    /* Prevent horizontal scrolling */
+    min-height: 100vh;
 }
 
-header {
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    line-height: 10rem;
-}
-
-/* Navbar styles */
-nav {
+/* Navbar using CSS Grid */
+.navbar {
+    display: grid;
+    /* For large and medium screens, display everything on one row */
+    grid-template-areas: "logo buttons search icons";
+    grid-template-columns: auto 1fr auto auto;
+    gap: 1rem;
     background: linear-gradient(90deg, rgba(199, 97, 139, 1) 0%, rgba(103, 161, 165, 1) 100%);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 0.5rem 1rem;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+/* Grid area assignments */
+.nav-logo {
+    grid-area: logo;
+}
+
+.nav-buttons {
+    grid-area: buttons;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    gap: 0.5rem;
 }
 
-section {
-    flex: 1;
-    height: auto;
-    /* Allow flexibility */
+.nav-search {
+    grid-area: search;
+    display: flex;
+    justify-content: center;
 }
 
-footer {
-    position: relative;
-    background-color: #67a1a5;
-    height: 10rem;
+.nav-icons {
+    grid-area: icons;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 /* Logo styles */
 .logo {
-    max-width: 4rem;
-    max-height: 4rem;
-    margin-right: 1rem;
+    max-width: 80px;
+    height: auto;
 }
 
-/* Button container */
-#button_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
-/* Button styles */
+/* Navigation Button Styles */
 .btn-nav {
-    color: white;
-    background-color: transparent;
+    background: transparent;
     border: 2px solid white;
+    color: white;
     padding: 0.5rem 1rem;
-    text-transform: uppercase;
     font-size: 1rem;
-    font-weight: bold;
+    text-transform: uppercase;
     border-radius: 25px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    white-space: nowrap;
+    /* Prevent breaking if possible */
 }
 
 .btn-nav:hover {
-    background-color: white;
+    background: white;
     color: #c7618b;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
-/* Search bar styles */
-#search_container {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-}
-
+/* Search Bar Styles */
 .search-bar {
+    width: 100%;
+    max-width: 300px;
     padding: 0.5rem;
     border: 2px solid white;
     border-radius: 25px;
-    outline: none;
-    background-color: transparent;
+    background: transparent;
     color: white;
-    font-size: 1rem;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
 }
 
 .search-bar::placeholder {
@@ -99,19 +99,85 @@ footer {
 }
 
 .search-bar:focus {
-    background-color: white;
+    background: white;
     color: #c7618b;
 }
 
-/* Icon styles */
+/* Icon Styles */
+.user,
 .cart {
     width: 2rem;
     height: 2rem;
-    margin-left: 1rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
 }
 
+.user:hover,
 .cart:hover {
     transform: scale(1.1);
+    /* Adjust hue-rotate and saturation to achieve a pinkish tint */
+    filter: hue-rotate(300deg) saturate(1.5);
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 1rem;
+}
+
+/* Footer Styles */
+footer {
+    background: #67a1a5;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Responsive Styles */
+
+/* Mobile devices (max-width: 576px)
+   Stack all items vertically */
+@media (max-width: 576px) {
+    .navbar {
+        grid-template-areas:
+            "logo"
+            "buttons"
+            "search"
+            "icons";
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Medium devices (577px to 1024px) */
+@media (min-width: 577px) and (max-width: 1024px) {
+    .navbar {
+        grid-template-areas: "logo buttons search icons";
+        grid-template-columns: auto 1fr auto auto;
+    }
+
+    .search-bar {
+        max-width: 250px;
+    }
+}
+
+/* For medium & smaller devices, allow the buttons to shrink or wrap */
+@media (max-width: 768px) {
+    .nav-buttons {
+        flex-wrap: wrap;
+        /* Allow buttons to wrap onto multiple lines */
+        justify-content: center;
+    }
+
+    .btn-nav {
+        padding: 0.3rem 0.6rem;
+        /* Slightly smaller padding */
+        font-size: 0.9rem;
+        /* Reduce font size */
+    }
 }
