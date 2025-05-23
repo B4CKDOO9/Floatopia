@@ -192,6 +192,116 @@ footer {
 }
 
 
+
+a,
+a:visited,
+a:active {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-2 {
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.col-2 img {
+    max-width: 100%;
+    padding: 50px 0;
+}
+
+.col-2 h1 {
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+
+.col-4 {
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 180px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+
+.col-4 img {
+    width: 100%;
+}
+
+.col-4 p {
+    font-size: 14px;
+}
+
+.col-4:hover {
+    transform: translateY(-5px);
+}
+
+.title {
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+}
+
+.title::after {
+    content: '';
+    background: linear-gradient(90deg, rgba(199, 97, 139, 1) 0%, rgba(103, 161, 165, 1) 100%);
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+h4 {
+    color: #555;
+    font-weight: normal;
+}
+
+.rating .fa {
+    color: #c7618b;
+}
+
+.offer {
+    background: linear-gradient(90deg, rgba(199, 97, 139, 1) 0%, rgba(103, 161, 165, 1) 100%);
+    margin-top: 80px;
+    padding: 30px 0;
+}
+
+.col-2 .offer-img {
+    padding: 50px;
+    /*kada dode veca slika ovo promjeni*/
+}
+
+small {
+    color: #555;
+}
+
+.gumb {
+    display: inline-block;
+    background: #ff523b;
+    color: #fff;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+}
+
+
 @media (max-width: 768px) {
     .navbar {
         display: flex;
@@ -224,115 +334,60 @@ footer {
         display: none;
     }
 
-    .col-4{
-        flex-basis: 45%;
+    .col-4 img {
+        max-width: 80%;
+        /* Scale down the product images */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin: 0 auto;
+        /* Center the images */
+    }
+
+    .col-4 h4 {
+        font-size: 1rem;
+        /* Reduce the font size of product titles */
+        text-align: center;
+        /* Center-align the text */
+    }
+
+    .col-4 p {
+        font-size: 0.9rem;
+        /* Reduce the font size of the price */
+        text-align: center;
+        /* Center-align the price */
+    }
+
+    .rating {
+        text-align: center;
+        /* Center-align the rating stars */
+        font-size: 0.8rem;
+        /* Reduce the size of the stars */
+    }
+
+    .row {
+        flex-direction: column;
+        /* Stack products vertically */
+        align-items: center;
+        /* Center-align the products */
+    }
+
+    .small-container {
+        padding: 0 1rem;
+        /* Add padding to prevent content from touching the edges */
+    }
+
+    .gumb {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background: #c7618b;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background 0.3s ease;
+    }
+
+    .gumb:hover {
+        background: #a34d6e;
     }
 }
-
-a,a:visited,a:active{
-    text-decoration: none;
-    color:black;
-}
-
-a:hover{
-    color:white;
-    text-decoration: none;
-}
-
-.row{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.col-2{
-    flex-basis: 50%;
-    min-width: 300px;
-}
-
-.col-2 img{
-    max-width: 100%;
-    padding:50px 0;
-}
-
-.col-2 h1{
-    font-size: 50px;
-    line-height: 60px;
-    margin:25px 0;
-}
-
-.col-4{
-    flex-basis: 25%;
-    padding:10px;
-    min-width: 180px;
-    margin-bottom: 50px;
-    transition: transform 0.5s;
-}
-
-.col-4 img{
-    width:100%;
-}
-
-.col-4 p{
-    font-size:14px;
-}
-
-.col-4:hover{
-    transform: translateY(-5px);
-}
-
-.title{
-    text-align: center;
-    margin: 0 auto 80px;
-    position: relative;
-    line-height: 60px;
-    color:#555;
-}
-
-.title::after{
-    content:'';
-    background:linear-gradient(90deg, rgba(199, 97, 139, 1) 0%, rgba(103, 161, 165, 1) 100%);
-    width:80px;
-    height:5px;
-    border-radius: 5px;
-    position:absolute;
-    bottom: 0;
-    left:50%;
-    transform: translateX(-50%);
-}
-
-h4{
-    color:#555;
-    font-weight: normal;
-}
-
-.rating .fa{
-    color: #c7618b;
-}
-
-.offer{
-    background:linear-gradient(90deg, rgba(199, 97, 139, 1) 0%, rgba(103, 161, 165, 1) 100%);
-    margin-top: 80px;
-    padding:30px 0;
-}
-
-.col-2 .offer-img{
-    padding:50px;  /*kada dode veca slika ovo promjeni*/
-}
-
-small{
-    color:#555;
-}
-
-.gumb{
-    display:inline-block;
-    background: #ff523b;
-    color:#fff;
-    padding: 8px 30px;
-    margin: 30px 0;
-    border-radius: 30px;
-}
-
-
-
