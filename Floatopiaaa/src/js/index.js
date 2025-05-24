@@ -7,3 +7,15 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdownMenu.classList.toggle("open");
     });
 });
+
+function updateClock(){
+    const clock = document.getElementById("clock");
+    const now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+    clock.textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
