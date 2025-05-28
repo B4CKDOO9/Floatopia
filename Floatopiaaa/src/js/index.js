@@ -32,4 +32,3 @@ function CountdownToSummer() {
         }
     }, 1000);
 }
-
