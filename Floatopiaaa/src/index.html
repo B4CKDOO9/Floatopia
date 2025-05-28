@@ -7,10 +7,13 @@
     <title>Floatopia</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<!----------NAVIGATION------------>
+    <!----------NAVIGATION------------>
     <nav class="navbar">
         <div class="nav-logo">
             <img class="logo" src="pictures/logo.png" alt="Logo">
@@ -31,15 +34,18 @@
             <input type="text" class="search-bar" placeholder="Search...">
         </div>
     </nav>
-    
-<!-------HEADER---------->
+
+    <!-------HEADER---------->
     <div class="doughnut-line"></div>
-    <div> <!-- jebeni atomski sat-->
-        <div class="next-summer"></div>
+    <div>
+        <div class="next-summer">
+            <h1 class="clock-title">Flotopia Summer starts in:</h1>
+            <p id="countdown" class="clock"></p>
+        </div>
     </div>
     <div class="doughnut-line"></div>
 
-<!---------CONTENT----------->
+    <!---------CONTENT----------->
     <main class="main-content">
         <section class="container mt-5">
             <h2>Welcome to Floatopia</h2>
@@ -47,7 +53,7 @@
         </section>
     </main>
 
-<!------FOOTER-------->
+    <!------FOOTER-------->
     <footer>
         <p>&copy; 2023 Floatopia</p>
     </footer>
