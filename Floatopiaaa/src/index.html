@@ -7,39 +7,15 @@
     <title>Floatopia</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!----------NAVIGATION------------>
-    <nav class="navbar">
-        <div class="nav-logo">
-            <img class="logo" src="pictures/logo.png" alt="Logo">
-        </div>
-        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-        <div class="dropdown-menu">
-            <button class="btn-nav"><a href="index.html">Home</a></button>
-            <button class="btn-nav"><a href="floaties.html">Floaties</a></button>
-            <button class="btn-nav">Sale</button>
-            <button class="btn-nav">Contact us!</button>
-            <button class="btn-nav">About us</button>
-        </div>
-        <div class="nav-icons">
-            <a href="balala"><img class="user" src="pictures/user.png" alt="User Login"></a>
-            <a href="balala"><img class="cart" src="pictures/cart.png" alt="Cart"></a>
-        </div>
-        <div class="nav-search">
-            <input type="text" class="search-bar" placeholder="Search...">
-        </div>
-    </nav>
-
     <!-------HEADER---------->
     <div class="doughnut-line"></div>
     <div>
         <div class="next-summer">
-            <h1 class="clock-title">Flotopia Summer starts in:</h1>
+            <h1 class="clock-title">Floatopia Summer starts in:</h1>
             <p id="countdown" class="clock"></p>
         </div>
     </div>
@@ -47,16 +23,89 @@
 
     <!---------CONTENT----------->
     <main class="main-content">
+        <!-- Welcome Section -->
         <section class="container mt-5">
             <h2>Welcome to Floatopia</h2>
             <p>Explore our collection of floaties and enjoy your summer!</p>
         </section>
-    </main>
 
-    <!------FOOTER-------->
-    <footer>
-        <p>&copy; 2023 Floatopia</p>
-    </footer>
+        <!-- Featured Products Section -->
+        <section class="featured-products">
+            <h2 class="title">Featured Floaties</h2>
+            <div class="row">
+                <div class="col-4">
+                    <img src="pictures/floatie1.png" alt="Floatie 1">
+                    <h4>Donut Floatie</h4>
+                    <p>$25.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="pictures/floatie2.png" alt="Floatie 2">
+                    <h4>Unicorn Floatie</h4>
+                    <p>$35.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="pictures/floatie3.png" alt="Floatie 3">
+                    <h4>Pizza Floatie</h4>
+                    <p>$30.00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <h2>About Floatopia</h2>
+            <p>At Floatopia, we believe in making your summer unforgettable with our premium floaties. Whether you're
+                lounging by the pool or enjoying the beach, our floaties are designed to bring fun and relaxation to
+                your summer adventures.</p>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial">
+                <p>"The donut floatie is amazing! My kids love it, and it's super durable."</p>
+                <p>- Sarah J.</p>
+            </div>
+            <div class="testimonial">
+                <p>"Floatopia's floaties are the best! The unicorn floatie was the highlight of our pool party."</p>
+                <p>- Mike T.</p>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup Section -->
+        <section class="newsletter">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest floatie designs and exclusive discounts!</p>
+            <form>
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="gumb">Subscribe</button>
+            </form>
+        </section>
+
+        <!-- Social Media Section -->
+        <section class="social-media">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+                <a href="#"><img src="pictures/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="pictures/instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="pictures/twitter-icon.png" alt="Twitter"></a>
+            </div>
+        </section>
+
+        <!-- Call-to-Action Banner -->
+        <section class="cta-banner">
+            <h2>Summer Sale!</h2>
+            <p>Get up to 30% off on all floaties. Limited time only!</p>
+            <a href="floaties.html" class="gumb">Shop Now</a>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <p>Email: support@floatopia.com</p>
+            <p>Phone: +1 (555) 123-4567</p>
+        </section>
+    </main>
 
     <script src="js/index.js"></script>
 </body>

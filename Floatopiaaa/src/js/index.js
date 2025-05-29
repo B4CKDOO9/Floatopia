@@ -1,30 +1,47 @@
 // filepath: c:\Users\Smolec\Documents\GitHub\Floatopia\Floatopiaaa\src\js\index.js
 document.addEventListener("DOMContentLoaded", () => {
+    // Load navigation
+    fetch("nav.html")
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML("afterbegin", data);
+            setupMenuToggle(); // Reinitialize menu toggle after injecting nav
+        });
+
+    // Load footer
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML("beforeend", data);
+        });
+
+    // Countdown function
+    CountdownToSummer();
+});
+
+// Menu toggle functionality
+function setupMenuToggle() {
     const menuToggle = document.querySelector(".menu-toggle");
     const dropdownMenu = document.querySelector(".dropdown-menu");
 
     menuToggle.addEventListener("click", () => {
         dropdownMenu.classList.toggle("open");
     });
-
-    // Call the countdown function here
-    CountdownToSummer();
-});
+}
 
 function CountdownToSummer() {
-    var countDownDate = new Date("Jun 13, 2025 24:00:00").getTime();
+    const countDownDate = new Date("Jun 13, 2025 24:00:00").getTime();
 
-    var x = setInterval(function () {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
+    const x = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
 
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
+        document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
         if (distance < 0) {
             clearInterval(x);
