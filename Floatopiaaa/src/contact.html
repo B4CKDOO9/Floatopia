@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floatopia</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-------HEADER---------->
+    <div class="doughnut-line"></div>
+    <div>
+        <div class="next-summer">
+            <h1 class="clock-title">Floatopia Summer starts in:</h1>
+            <p id="countdown" class="clock"></p>
+        </div>
+    </div>
+    <div class="doughnut-line"></div>
+
+    <!---------CONTENT----------->
+    <main class="main-content">
+        <!-- Contact Section -->
+        <section class="container mt-5">
+            <h2>Contact</h2>
+            <p>Do you have any questions, doubts or just want to say "Hi"?</p>
+            <p>Feel free to reach out to us!</p>
+        </section>
+
+        <!-- Form Section -->
+        <section class="featured-products">
+            <h2 class="title">Form</h2>
+            <form action="send_mail.php" method="POST" class="contact-form">
+                <label>Name:</label>
+                <input type="text" placeholder="Your name" required id="name"><br>
+                <label>E-mail:</label>
+                <input type="text" placeholder="example@gmail.com" required id="email"><br>
+                <label>Subject:</label>
+                <input type="text" placeholder="What's the problem?" required id="subject"><br>
+                <label>Message:</label>
+                <textarea placeholder="Tell me more" required id="Message" rows="2"></textarea><br>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+        <!-- About Section -->
+        <section class="about">
+            <h2>Info</h2>
+            <p>E-mail: <a href="mailto:support@floatopia.com">support@floatopia.com</a></p>
+            <p>Phone number: <a href="tel:+1 (555) 123-4567">+1 (555) 123-4567</a></p>
+            <p>Address:
+                Floatopia d.o.o.<br>
+                Ulica Ljetnih Radosti 5<br>
+                10000 Zagreb, Hrvatska
+            </p>
+            <p>Working hours: mon-fri 9:00 - 17:00</p>
+        </section>
+
+        <!-- Social Media Section -->
+        <section class="social-media">
+            <h2>Follow Us</h2>
+            <div class="social-icons">
+                <a href="#"><img src="pictures/facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="pictures/instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="pictures/twitter-icon.png" alt="Twitter"></a>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>

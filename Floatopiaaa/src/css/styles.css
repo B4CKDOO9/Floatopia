@@ -24,7 +24,7 @@ body {
 
 
 .navbar {
-    diplay: flex;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     background: linear-gradient(90deg, rgba(199, 97, 139, 1) 0%, rgba(103, 161, 165, 1) 100%);
@@ -46,7 +46,7 @@ body {
     display: none;
     flex-direction: column;
     gap: 0.5rem;
-    position: absolute top: 100%;
+    position: absolute top 100%;
     left: 0;
     background: linear-gradient(90deg, rgba(199, 97, 139, 1) 0%, rgba(103, 161, 165, 1) 100%);
     padding: 0.5rem 0;
