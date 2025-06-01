@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+
 }
 
 html,
@@ -305,13 +306,63 @@ h4 {
 
 .offer {
     background: linear-gradient(90deg, rgba(199, 97, 139, 1) 0%, rgba(103, 161, 165, 1) 100%);
-    margin-top: px;
-    padding: 30px 0;
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    color: black;
 }
 
-.col-2 .offer-img {
-    padding: 50px;
-    /*kada dode veca slika ovo promjeni*/
+.offer .offer-img {
+    width: 100%;
+    max-width: 350px;
+    /* Limit the size of the image */
+    border-radius: 15px;
+    /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer .offer-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.offer .col-2 h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.offer .col-2 p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.offer .col-2 small {
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.offer .gumb {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background: #ff523b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.offer .gumb:hover {
+    background: #e14b2e;
+    transform: scale(1.05);
 }
 
 small {
@@ -434,43 +485,80 @@ small {
 }
 
 .featured-products .row {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Responsive grid */
     gap: 2rem;
+    /* Add spacing between items */
+    justify-items: center;
+    /* Center items in the grid */
 }
 
 .featured-products .col-4 {
-    flex: 1;
-    max-width: 300px;
-    text-align: center;
     background: white;
+    border: 2px solid #ddd;
+    /* Add a frame around each card */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add a subtle shadow */
+    overflow: hidden;
+    /* Ensure content stays within the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
     padding: 1rem;
-    transition: transform 0.3s ease;
+    width: 100%;
+    /* Ensure consistent width */
+    max-width: 300px;
+    /* Set a maximum width */
+    height: 400px;
+    /* Set a fixed height for uniformity */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Space out content evenly */
 }
 
 .featured-products .col-4:hover {
     transform: translateY(-5px);
+    /* Lift the card slightly on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    /* Enhance shadow on hover */
 }
 
 .featured-products img {
-    max-width: 100%;
-    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    /* Set a fixed height for images */
+    object-fit: cover;
+    /* Ensure images are cropped proportionally */
+    border-bottom: 2px solid #ddd;
+    /* Add a divider between the image and text */
 }
 
 .featured-products h4 {
     font-size: 1.5rem;
-    /* Larger product titles */
-    margin: 1rem 0;
+    margin: 1rem 0 0.5rem;
     color: #333;
+}
+
+.featured-products .rating {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.featured-products .rating i {
+    font-size: 1.2rem;
+    color: #c7618b;
+    /* Star color */
 }
 
 .featured-products p {
     font-size: 1.2rem;
-    /* Larger product prices */
     color: #c7618b;
     font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 /* About Section */
@@ -608,6 +696,7 @@ small {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-top: 1rem;
 }
 
 .social-icons img {
@@ -617,7 +706,7 @@ small {
 }
 
 .social-icons img:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 /* Call-to-Action Banner */
@@ -671,6 +760,161 @@ small {
     font-size: 1.2rem;
     /* Larger paragraph text */
     color: #555;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    align-self: flex-start;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #c7618b;
+    box-shadow: 0 0 5px rgba(199, 97, 139, 0.5);
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form button {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: #c7618b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    background: #a34d6e;
+    transform: scale(1.05);
+}
+
+/* Floaties Section */
+.floaties .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Responsive grid */
+    gap: 2rem;
+    /* Add spacing between items */
+    justify-items: center;
+    /* Center items in the grid */
+}
+
+.floaties .col-4 {
+    background: white;
+    border: 2px solid #ddd;
+    /* Add a frame around each card */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add a subtle shadow */
+    overflow: hidden;
+    /* Ensure content stays within the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    /* Ensure consistent width */
+    max-width: 300px;
+    /* Set a maximum width */
+    height: 450px;
+    /* Set a fixed height for uniformity */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Space out content evenly */
+}
+
+.floaties .col-4:hover {
+    transform: translateY(-5px);
+    /* Lift the card slightly on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+    /* Enhance shadow on hover */
+}
+
+.floaties img {
+    width: 100%;
+    height: 200px;
+    /* Set a fixed height for images */
+    object-fit: cover;
+    /* Ensure images are cropped proportionally */
+    border-bottom: 2px solid #ddd;
+    /* Add a divider between the image and text */
+}
+
+.floaties h4 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem;
+    color: #333;
+}
+
+.floaties .rating {
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.floaties .rating i {
+    font-size: 1.2rem;
+    color: #c7618b;
+    /* Star color */
+}
+
+.floaties p {
+    font-size: 1.2rem;
+    color: #c7618b;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.floaties .add-to-basket {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background: #ff523b;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.floaties .add-to-basket:hover {
+    background: #e14b2e;
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
