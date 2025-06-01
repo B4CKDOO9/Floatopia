@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    color: black;
 
 }
 
@@ -8,7 +9,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Lacquer", sans-serif;
 }
 
 body {
@@ -28,7 +29,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(90deg, rgba(199, 97, 139, 1) 0%, rgba(103, 161, 165, 1) 100%);
+    background: linear-gradient(90deg, rgba(255, 223, 186, 1) 0%, rgba(255, 94, 87, 1) 100%);
     padding: 0.5rem 1rem;
     position: sticky;
     top: 0;
@@ -49,7 +50,7 @@ body {
     gap: 0.5rem;
     position: absolute top 100%;
     left: 0;
-    background: linear-gradient(90deg, rgba(199, 97, 139, 1) 0%, rgba(103, 161, 165, 1) 100%);
+    background: linear-gradient(90deg, rgba(255, 223, 186, 1) 0%, rgba(255, 94, 87, 1) 100%);
     padding: 0.5rem 0;
     z-index: 1000;
     margin: 0;
@@ -211,14 +212,6 @@ body {
     padding: 0;
 }
 
-footer {
-    background: #67a1a5;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
-
-
 
 a,
 a:visited,
@@ -285,7 +278,7 @@ a:hover {
 
 .title::after {
     content: '';
-    background: linear-gradient(90deg, rgba(199, 97, 139, 1) 0%, rgba(103, 161, 165, 1) 100%);
+    background: linear-gradient(90deg, rgba(255, 223, 186, 1) 0%, rgba(255, 94, 87, 1) 100%);
     width: 80px;
     height: 5px;
     border-radius: 5px;
@@ -305,15 +298,18 @@ h4 {
 }
 
 .offer {
-    background: linear-gradient(90deg, rgba(199, 97, 139, 1) 0%, rgba(103, 161, 165, 1) 100%);
-    margin-top: 3rem;
+    background: linear-gradient(90deg, rgba(255, 223, 186, 1) 0%, rgba(255, 94, 87, 1) 100%);
+    margin: 3rem auto;
     padding: 2rem;
     border-radius: 15px;
     display: flex;
+    flex-wrap: wrap;
+    /* Ensure content wraps on smaller screens */
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    /* Center content horizontally */
     gap: 2rem;
-    color: black;
+    text-align: center
 }
 
 .offer .offer-img {
@@ -329,7 +325,16 @@ h4 {
 
 .offer .offer-img:hover {
     transform: scale(1.05);
+    /* Slight zoom effect on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Enhance shadow on hover */
+}
+
+.offer .col-2 {
+    flex: 1 1 300px;
+    /* Ensure the text column is responsive */
+    max-width: 500px;
+    /* Optional: Limit the width of the text */
 }
 
 .offer .col-2 h1 {
@@ -353,7 +358,7 @@ h4 {
     font-size: 1rem;
     font-weight: bold;
     background: #ff523b;
-    color: white;
+    color: black;
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -386,7 +391,7 @@ small {
     font-size: 7rem;
     padding: 1.5rem;
     margin: 2rem auto;
-    background: linear-gradient(90deg, rgba(199, 97, 139, 1) 0%, rgba(103, 161, 165, 1) 100%);
+    background: linear-gradient(90deg, rgba(255, 223, 186, 1) 0%, rgba(255, 94, 87, 1) 100%);
     color: black;
     border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
@@ -403,8 +408,8 @@ small {
 
 /* Footer */
 .footer {
-    background: linear-gradient(90deg, rgba(103, 161, 165, 1) 0%, rgba(199, 97, 139, 1) 100%);
-    color: white;
+    background: linear-gradient(90deg, rgba(255, 223, 186, 1) 0%, rgba(255, 94, 87, 1) 100%);
+    color: black;
     text-align: center;
     padding: 1.5rem 1rem;
     margin-top: auto;
@@ -424,7 +429,7 @@ small {
 
 .footer-links a {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
@@ -438,7 +443,7 @@ small {
 .doughnut-line {
     width: 100%;
     height: 5px;
-    background: linear-gradient(90deg, rgba(199, 97, 139, 1) 0%, rgba(103, 161, 165, 1) 100%);
+    background: linear-gradient(90deg, rgba(255, 223, 186, 1) 0%, rgba(255, 94, 87, 1) 100%);
 }
 
 .next-summer {
@@ -565,7 +570,7 @@ small {
 .about {
     margin: 3rem auto;
     padding: 2rem;
-    background: linear-gradient(90deg, rgba(103, 161, 165, 1) 0%, rgba(199, 97, 139, 1) 100%);
+    background: linear-gradient(90deg, rgba(255, 223, 186, 1) 0%, rgba(255, 94, 87, 1) 100%);
     color: white;
     border-radius: 10px;
     text-align: center;
@@ -612,7 +617,7 @@ small {
 .newsletter {
     margin: 3rem auto;
     padding: 2rem;
-    background: linear-gradient(90deg, rgba(199, 97, 139, 1) 0%, rgba(103, 161, 165, 1) 100%);
+    background: linear-gradient(90deg, rgba(255, 223, 186, 1) 0%, rgba(255, 94, 87, 1) 100%);
     color: white;
     border-radius: 10px;
     text-align: center;
@@ -713,7 +718,7 @@ small {
 .cta-banner {
     margin: 3rem auto;
     padding: 2rem;
-    background: linear-gradient(90deg, rgba(103, 161, 165, 1) 0%, rgba(199, 97, 139, 1) 100%);
+    background: linear-gradient(90deg, rgba(255, 223, 186, 1) 0%, rgba(255, 94, 87, 1) 100%);
     color: white;
     border-radius: 10px;
     text-align: center;
@@ -809,7 +814,7 @@ small {
     padding: 0.8rem 2rem;
     font-size: 1.2rem;
     font-weight: bold;
-    background: #c7618b;
+    background: rgba(255, 94, 87, 1);
     color: white;
     border: none;
     border-radius: 5px;
@@ -818,11 +823,25 @@ small {
 }
 
 .contact-form button:hover {
-    background: #a34d6e;
+    background: rgba(255, 94, 87, 1);
     transform: scale(1.05);
 }
 
 /* Floaties Section */
+.floaties {
+    font-family: "Lacquer", sans-serif;
+    /* Ensure the font matches the rest of the page */
+    color: #333;
+    /* Optional: Set a consistent text color */
+}
+
+.floaties h4,
+.floaties p,
+.floaties .add-to-basket {
+    font-family: inherit;
+    /* Inherit the font from the parent */
+}
+
 .floaties .row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -915,6 +934,162 @@ small {
 .floaties .add-to-basket:hover {
     background: #e14b2e;
     transform: scale(1.05);
+}
+
+.basket {
+    margin: 3rem auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.basket-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+.basket-table th,
+.basket-table td {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+}
+
+.basket-table th {
+    background: rgba(255, 94, 87, 1);
+    color: white;
+    font-weight: bold;
+}
+
+.basket-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.basket-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.quantity-input {
+    width: 60px;
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.remove-item {
+    padding: 0.5rem 1rem;
+    background: #ff523b;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.remove-item:hover {
+    background: #e14b2e;
+}
+
+.basket-summary {
+    text-align: right;
+    margin-top: 2rem;
+}
+
+.basket-summary h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.basket-summary p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.checkout-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background: #67a1a5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background: #558b8e;
+}
+
+/* Special Offer Section */
+.special-offer {
+    background: linear-gradient(90deg, rgba(255, 223, 186, 1) 0%, rgba(255, 94, 87, 1) 100%);
+    margin: 3rem auto;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.special-offer .col-2 {
+    flex: 1 1 300px;
+    max-width: 500px;
+}
+
+.special-offer h1 {
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.special-offer p.offer-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.special-offer small {
+    font-size: 1.2rem;
+    color: #fff;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.special-offer .gumb {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: #ff523b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.special-offer .gumb:hover {
+    background: #e14b2e;
+    transform: scale(1.1);
+}
+
+.special-offer .offer-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.special-offer .offer-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 768px) {

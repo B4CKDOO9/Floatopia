@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floatopia - Basket</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!---------BASKET CONTENT----------->
+    <main class="main-content">
+        <div class="small-container basket">
+            <h2 class="title">Your Basket</h2>
+            <table class="basket-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="basket-items">
+                    <!-- Items will be dynamically added here -->
+                </tbody>
+            </table>
+            <div class="basket-summary">
+                <h3>Basket Summary</h3>
+                <p>Subtotal: <span id="subtotal">$0.00</span></p>
+                <p>Tax (10%): <span id="tax">$0.00</span></p>
+                <p>Total: <span id="total">$0.00</span></p>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/index.js"></script>
+    <script>
+        // Load cart items from localStorage and display them
+        document.addEventListener("DOMContentLoaded", () => {
+            const basketItemsContainer = document.getElementById("basket-items");
+            const subtotalElement = document.getElementById("subtotal");
+            const taxElement = document.getElementById("tax");
+            const totalElement = document.getElementById("total");
+
+            const TAX_RATE = 0.1;
+
+            function loadCart() {
+                const cart = JSON.parse(localStorage.getItem("cart")) || [];
+                basketItemsContainer.innerHTML = ""; // Clear existing items
+
+                let subtotal = 0;
+
+                cart.forEach((item) => {
+                    const total = parseFloat(item.price.replace("$", "")) * item.quantity;
+                    subtotal += total;
+
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>
+                            <div class="basket-item">
+                                <img src="${item.image}" alt="${item.name}">
+                                <p>${item.name}</p>
+                            </div>
+                        </td>
+                        <td>
+                            <input type="number" value="${item.quantity}" min="1" class="quantity-input" data-id="${item.id}">
+                        </td>
+                        <td>${item.price}</td>
+                        <td>$${total.toFixed(2)}</td>
+                        <td>
+                            <button class="remove-item" data-id="${item.id}">Remove</button>
+                        </td>
+                    `;
+                    basketItemsContainer.appendChild(row);
+                });
+
+                const tax = subtotal * TAX_RATE;
+                const total = subtotal + tax;
+
+                subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+                taxElement.textContent = `$${tax.toFixed(2)}`;
+                totalElement.textContent = `$${total.toFixed(2)}`;
+            }
+
+            // Update cart quantities
+            basketItemsContainer.addEventListener("change", (e) => {
+                if (e.target.classList.contains("quantity-input")) {
+                    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+                    const productId = e.target.dataset.id;
+                    const newQuantity = parseInt(e.target.value);
+
+                    const product = cart.find((item) => item.id === productId);
+                    if (product) {
+                        product.quantity = newQuantity;
+                        localStorage.setItem("cart", JSON.stringify(cart));
+                        loadCart();
+                    }
+                }
+            });
+
+            // Remove items from cart
+            basketItemsContainer.addEventListener("click", (e) => {
+                if (e.target.classList.contains("remove-item")) {
+                    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+                    const productId = e.target.dataset.id;
+
+                    const updatedCart = cart.filter((item) => item.id !== productId);
+                    localStorage.setItem("cart", JSON.stringify(updatedCart));
+                    loadCart();
+                }
+            });
+
+            loadCart();
+        });
+    </script>
+</body>
+
+</html>
