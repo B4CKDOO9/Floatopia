@@ -1,31 +1,26 @@
 // filepath: c:\Users\Smolec\Documents\GitHub\Floatopia\Floatopiaaa\src\js\index.js
 document.addEventListener("DOMContentLoaded", () => {
-    // Load navigation
+
     fetch("nav.html")
         .then(response => response.text())
         .then(data => {
             document.body.insertAdjacentHTML("afterbegin", data);
-            setupMenuToggle(); // Reinitialize menu toggle after injecting nav
+            setupMenuToggle();
         });
 
-    // Load footer
     fetch("footer.html")
         .then(response => response.text())
         .then(data => {
             document.body.insertAdjacentHTML("beforeend", data);
         });
 
-    // Countdown function
     CountdownToSummer();
 
-    // Initialize basket functionality
     setupBasket();
 
-    // Initialize "Add to Basket" functionality
     setupAddToBasket();
 });
 
-// Menu toggle functionality
 function setupMenuToggle() {
     const menuToggle = document.querySelector(".menu-toggle");
     const dropdownMenu = document.querySelector(".dropdown-menu");
@@ -35,7 +30,6 @@ function setupMenuToggle() {
     });
 }
 
-// Countdown to summer
 function CountdownToSummer() {
     const countDownDate = new Date("Jun 13, 2025 24:00:00").getTime();
 
@@ -64,6 +58,7 @@ function CountdownToSummer() {
 
 // Basket functionality
 function setupBasket() {
+    const basketElement = document.querySelector(".basket");
     const quantityInputs = document.querySelectorAll(".quantity-input");
     const removeButtons = document.querySelectorAll(".remove-item");
     const subtotalElement = document.getElementById("subtotal");
@@ -74,6 +69,7 @@ function setupBasket() {
 
     function updateTotals() {
         let subtotal = 0;
+        let hasItems = false;
 
         document.querySelectorAll(".basket-table tbody tr").forEach((row) => {
             const price = parseFloat(row.cells[2].textContent.replace("$", ""));
@@ -82,6 +78,10 @@ function setupBasket() {
 
             row.cells[3].textContent = `$${total.toFixed(2)}`;
             subtotal += total;
+
+            if (quantity > 0) {
+                hasItems = true;
+            }
         });
 
         const tax = subtotal * TAX_RATE;
@@ -90,6 +90,12 @@ function setupBasket() {
         if (subtotalElement) subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
         if (taxElement) taxElement.textContent = `$${tax.toFixed(2)}`;
         if (totalElement) totalElement.textContent = `$${total.toFixed(2)}`;
+
+        if (hasItems) {
+            basketElement?.classList.add("dripping");
+        } else {
+            basketElement?.classList.remove("dripping");
+        }
     }
 
     quantityInputs.forEach((input) => {
@@ -106,7 +112,6 @@ function setupBasket() {
     updateTotals();
 }
 
-// Function to handle "Add to Basket" button clicks
 function setupAddToBasket() {
     const addToBasketButtons = document.querySelectorAll(".add-to-basket");
 
@@ -118,7 +123,6 @@ function setupAddToBasket() {
             const productPrice = productElement.querySelector("p").textContent;
             const productImage = productElement.querySelector("img").src;
 
-            // Create a product object
             const product = {
                 id: productId,
                 name: productName,
@@ -127,25 +131,22 @@ function setupAddToBasket() {
                 quantity: 1,
             };
 
-            // Add the product to the cart in localStorage
+
             addToCart(product);
         });
     });
 }
 
-// Function to add a product to the cart in localStorage
 function addToCart(product) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Check if the product already exists in the cart
     const existingProduct = cart.find((item) => item.id === product.id);
     if (existingProduct) {
-        existingProduct.quantity += 1; // Increment quantity if it already exists
+        existingProduct.quantity += 1;
     } else {
-        cart.push(product); // Add new product to the cart
+        cart.push(product);
     }
 
-    // Save the updated cart to localStorage
     localStorage.setItem("cart", JSON.stringify(cart));
 
     alert(`${product.name} has been added to your basket!`);
