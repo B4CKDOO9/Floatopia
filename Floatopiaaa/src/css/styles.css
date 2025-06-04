@@ -310,7 +310,8 @@ h4 {
 .offer .offer-img {
     width: 100%;
     max-width: 350px;
-    border-radius: 15px;/ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1067,7 +1068,8 @@ small {
     }
 
     .menu-toggle {
-        order: 0 margin-right: auto;
+        order: 0;
+        margin-right: auto;
         font-size: 1.5rem;
         color: black;
     }
